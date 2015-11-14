@@ -1,5 +1,7 @@
 json.puzzle do 
-  json.about puzzle.about
-  json.image puzzle.image
+  json.title puzzle.about
+  json.url puzzle.image
   json.id puzzle.id
+  json.level puzzle.level
+  json.user_id puzzle.user.id
 end
