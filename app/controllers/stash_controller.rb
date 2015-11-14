@@ -7,9 +7,7 @@ class StashController < ActionController::Base
 	end
 
 	def create
-
-		binding.pry
-		@puzzle = Stash.create(stash_params)
+		@puzzle = current_user.stash.create(stash_params)
 
 		if @puzzle.save
 			render json: { puzzle: @puzzle }, status: :ok
