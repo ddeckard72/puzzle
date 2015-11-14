@@ -16,4 +16,11 @@ get "game/puzzle/:id" , to: "game#index"
 post "game/puzzle/:id" , to: "game#save"
 #            GET    /game/puzzle/:id(.:format) game#index
 #            POST   /game/puzzle/:id(.:format) game#save
+
+#REGISTRATION CONTROLLER
+post "/signup", to: "registrations#create"
+delete "/signup", to: "registrations#destroy"
+post "/login", to: "registrations#login"
+get "/logout", to: "registrations#logout"
+
 end
