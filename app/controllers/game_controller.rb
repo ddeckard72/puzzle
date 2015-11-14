@@ -1,0 +1,17 @@
+class GameController < ActionController::Base
+	def index
+		@games = Game.where(puzzle: :id).order("time").limit(10)
+		render "index.json.jbuilder", status: :ok
+	end
+
+	def save
+		@game = Game.new(user: user.id, time: params[:time], puzzle_id: :id)
+		if @game.save
+			render json: { puzzle: @game }, status: :ok
+		else
+
+			render json: { errors: @game.errors.full_messages },
+        	status: :unprocessable_entity
+		end
+	end
+end
