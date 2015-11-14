@@ -29,7 +29,7 @@ class StashController < ActionController::Base
 
 	private 
 	def stash_params
-		allow = [:image, :author, :about, :width, :height]
+		allow = [:image, :author, :about, :width, :height, :level]
 		params.require(:stash).permit(allow)
 	end
 end
