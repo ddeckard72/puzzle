@@ -8,9 +8,9 @@ class StashController < ActionController::Base
 
 	def create
 		@puzzle = Stash.create(stash_params.except(:image))
-		image = MiniMagick::Image.read(Base64.decode64(stash_params[:image]))
-		@puzzle.update image: File.open(image.path)
-		binding.pry
+		#image = MiniMagick::Image.read(Base64.decode64(stash_params[:image]))
+		#@puzzle.update image: File.open(image.path)
+		#binding.pry
 
 		if @puzzle.save
 			render json: { puzzle: @puzzle }, status: :ok
