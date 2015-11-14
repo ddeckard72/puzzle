@@ -29,6 +29,8 @@ gem 'aws-sdk-v1'
 gem 'paperclip' , '~> 4.3'
 #foreman
 gem 'foreman'
+#minimagick
+gem 'mini_magick'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
