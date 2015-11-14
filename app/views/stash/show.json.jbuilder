@@ -4,5 +4,6 @@ json.puzzle do
   json.id puzzle.id
   json.user_id puzzle.user_id
   json.username puzzle.user.username
+
   
 end
