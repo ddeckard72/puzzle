@@ -44,4 +44,5 @@ Rails.application.configure do
       bucket: ENV["S3_BUCKET"]
     }
   }
+
 end
