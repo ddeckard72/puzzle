@@ -1,14 +1,16 @@
 #puzzle controller
 class StashController < ActionController::Base
+
 	def index
 		@puzzles = Stash.order("about")
 		render "index.json.jbuilder", status: :ok
 	end
 
 	def create
-		@puzzle = Stash.new(image: params[:image], author: params[:author], about: params[:about],
-							width: params[:width], height: params[:height])
-		
+		@puzzle = Stash.create(stash_params.except(:image))
+		image = MiniMagick::Image.read(Base64.decode64(stash_params[:image]))
+		@puzzle.update image: File.open(image.path)
+		binding.pry
 
 		if @puzzle.save
 			render json: { puzzle: @puzzle }, status: :ok
@@ -26,4 +28,11 @@ class StashController < ActionController::Base
 		#render some json
 		render "show.json.jbuilder", status: :found
 	end 
+
+	private 
+	def stash_params
+		allow = [:image, :author, :about, :width, :height]
+		params.require(:stash).permit(allow)
+
+	end
 end
