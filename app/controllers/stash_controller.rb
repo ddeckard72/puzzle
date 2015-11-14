@@ -7,6 +7,7 @@ class StashController < ActionController::Base
 	end
 
 	def create
+
 		binding.pry
 		@puzzle = Stash.create(stash_params)
 
