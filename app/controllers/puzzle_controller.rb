@@ -1,4 +1,8 @@
 #puzzle controller
-class PuzzleController < ActionController::Base
+class StashController < ActionController::Base
+	def index
 
+	end
+
+	
 end
