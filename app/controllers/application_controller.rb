@@ -13,5 +13,6 @@ class ApplicationController < ActionController::Base
   	token = request.headers["Access-Token"]
   	render json: {error: "Could not authenticate with token '#{token}'"},
   	status: :unauthorized
+    end
   end
 end
