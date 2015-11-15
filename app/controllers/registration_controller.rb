@@ -1,8 +1,7 @@
 class RegistrationsController < ApplicationController
 
   def create
-    @user = User.new(email: params[:email],
-                     username: params[:username],
+    @user = User.new(username: params[:username],
                      password: params[:password])
     if @user.save
       render "create.json.jbuilder", status: :created
@@ -32,7 +31,7 @@ class RegistrationsController < ApplicationController
   end
 
   def destroy
-    @user = User.find_by(email: params[:email])
+    @user = User.find_by(email: params[:email])   ####### change to find by some other param
     if @user && @user.authenticate(params[:password])
       @user.destroy
     else
