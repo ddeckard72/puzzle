@@ -9,7 +9,7 @@ class StashController < ApplicationController
 	end
 
 	def create
-	 	@puzzle = current_user.Stash.create(stash_params)
+	 	@puzzle = current_user.stashes.create(stash_params)
 	#	@puzzle = Stash.create(stash_params)
 
 		if @puzzle.save
