@@ -18,8 +18,8 @@ post "game/puzzle/:id" , to: "game#save"
 #            POST   /game/puzzle/:id(.:format) game#save
 
 #REGISTRATION CONTROLLER
-post "/signup", to: "registration#create"
-delete "/signup", to: "registration#destroy"
+post "/signup", to: "registrations#create"
+delete "/signup", to: "registrations#destroy"
 post "/login", to: "registrations#login"
 get "/logout", to: "registrations#logout"
 
