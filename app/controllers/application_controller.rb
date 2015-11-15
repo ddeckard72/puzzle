@@ -14,5 +14,7 @@ class ApplicationController < ActionController::Base
   	render json: {error: "Could not authenticate with token '#{token}'"},
   	status: :unauthorized
     end
+  
   end
+
 end
