@@ -1,5 +1,5 @@
 #puzzle controller
-class StashController < ActionController::Base
+class StashController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 
 
