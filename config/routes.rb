@@ -16,8 +16,8 @@ resources :stash
 
 
 #game routes
-get "game/puzzle/:id" , to: "game#index"
-post "game/puzzle/:id" , to: "game#save"
+get "/game" , to: "game#index"
+post "/game" , to: "game#save"
 #            GET    /game/puzzle/:id(.:format) game#index
 #            POST   /game/puzzle/:id(.:format) game#save
 
