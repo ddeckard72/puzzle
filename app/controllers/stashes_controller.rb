@@ -1,5 +1,5 @@
 #puzzle controller
-class StashController < ActionController::Base
+class StashesController < ActionController::Base
 
 	def index
 		@puzzles = Stash.order("about")
