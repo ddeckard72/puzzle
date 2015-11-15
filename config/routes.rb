@@ -11,6 +11,8 @@ resources :stash
 #            PUT    /stash/:id(.:format)      stash#update
 #            DELETE /stash/:id(.:format)      stash#destroy
 
+get "stash/user/:id", to: "stash#user"
+
 #game routes
 get "game/puzzle/:id" , to: "game#index"
 post "game/puzzle/:id" , to: "game#save"
