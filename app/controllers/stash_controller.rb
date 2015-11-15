@@ -26,7 +26,7 @@ class StashController < ApplicationController
 	end 
 
 	def user
-		@puzzles = Stash.find(user_id: params[:id])
+		@puzzles = current_user.stashes
 		render "user.json.jbuilder", status: :found
 	end
 
