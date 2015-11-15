@@ -5,7 +5,8 @@ class GameController < ActionController::Base
 	end
 
 	def save
-		@game = Game.new(user: user.id, time: params[:time], puzzle_id: :id)
+		@game = current_user.game.new(time: params[:time], puzzle_id: :id)
+	#	@game = Game.new(user: user.id, time: params[:time], puzzle_id: :id)
 		if @game.save
 			render json: { puzzle: @game }, status: :ok
 		else

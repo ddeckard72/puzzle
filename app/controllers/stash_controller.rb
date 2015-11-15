@@ -8,7 +8,7 @@ class StashController < ActionController::Base
 
 	def create
 	 	@puzzle = current_user.stash.create(stash_params)
-		#@puzzle = Stash.create(stash_params)
+	#	@puzzle = Stash.create(stash_params)
 
 		if @puzzle.save
 			render json: { puzzle: @puzzle }, status: :ok
@@ -22,8 +22,6 @@ class StashController < ActionController::Base
 	def show
 		
 		@puzzle = Stash.find_by(id: params[:id])
-		
-		#render some json
 		render "show.json.jbuilder", status: :found
 	end 
 
