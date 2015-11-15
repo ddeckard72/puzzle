@@ -4,5 +4,4 @@ json.puzzles @puzzles do |puzzle|
   json.level  puzzle.level
   json.author puzzle.user.username
   json.id     puzzle.id
-  json.message "poop"
 end
