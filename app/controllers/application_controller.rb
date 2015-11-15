@@ -9,12 +9,12 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user!
-  	unless current_user
+    unless current_user
   	token = request.headers["Access-Token"]
   	render json: {error: "Could not authenticate with token '#{token}'"},
   	status: :unauthorized
+    end
+  
   end
 
-
-  
 end

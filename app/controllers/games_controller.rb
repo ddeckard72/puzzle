@@ -1,11 +1,12 @@
-class GameController < ActionController::Base
+class GamesController < ApplicationController
 	def index
 		@games = Game.where(puzzle: :id).order("time").limit(10)
 		render "index.json.jbuilder", status: :ok
 	end
 
 	def save
-		@game = Game.new(user: user.id, time: params[:time], puzzle_id: :id)
+		@game = current_user.games.new(time: params[:time], puzzle_id: :id)
+	#	@game = Game.new(user: user.id, time: params[:time], puzzle_id: :id)
 		if @game.save
 			render json: { puzzle: @game }, status: :ok
 		else

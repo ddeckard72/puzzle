@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+get "stash/user", to: "stash#user"
+
 resources :stash
 #     Prefix Verb   URI Pattern               Controller#Action
 #stash_index GET    /stash(.:format)          stash#index
@@ -11,9 +13,11 @@ resources :stash
 #            PUT    /stash/:id(.:format)      stash#update
 #            DELETE /stash/:id(.:format)      stash#destroy
 
+
+
 #game routes
-get "game/puzzle/:id" , to: "game#index"
-post "game/puzzle/:id" , to: "game#save"
+get "/game" , to: "games#index"
+post "/game" , to: "games#save"
 #            GET    /game/puzzle/:id(.:format) game#index
 #            POST   /game/puzzle/:id(.:format) game#save
 

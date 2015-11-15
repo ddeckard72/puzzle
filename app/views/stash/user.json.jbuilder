@@ -5,6 +5,3 @@ json.puzzles @puzzles do |puzzle|
   json.author puzzle.user.username
   json.id     puzzle.id
 end
-
-
-
