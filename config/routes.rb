@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-get "stash/user/:id", to: "stash#user"
+get "stash/user", to: "stash#user"
 
 resources :stash
 #     Prefix Verb   URI Pattern               Controller#Action
