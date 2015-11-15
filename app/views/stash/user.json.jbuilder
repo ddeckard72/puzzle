@@ -1,4 +1,4 @@
-json.puzzles @puzzle do |puzzle|
+json.puzzles @puzzles do |puzzle|
   json.image  puzzle.image
   json.title  puzzle.title
   json.level  puzzle.level
